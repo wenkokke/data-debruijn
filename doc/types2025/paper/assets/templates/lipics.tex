@@ -1,0 +1,230 @@
+
+\documentclass[a4paper,UKenglish,cleveref,autoref,thm-restate]{lipics-v2021}
+
+% lhs2TeX:
+%include polycode.fmt
+
+${ if(lang) }
+\ifLuaTeX
+\usepackage[bidi=basic${ for(babeloptions) },${ babeloptions }${ endfor }]{babel}
+\else
+\usepackage[bidi=default${ for(babeloptions) },${ babeloptions }${ endfor }]{babel}
+\fi
+${ if(babel-lang) }
+${ if(mainfont) }
+\ifPDFTeX
+\else
+\babelfont{rm}[${ for(mainfontoptions) }${ mainfontoptions }${ sep },${ endfor }${ if(mainfontfallback) },RawFeature={fallback=mainfontfallback}${ endif }]{${ mainfont }}
+\fi
+${ endif }
+${ endif }
+${ for(babelfonts/pairs) }
+\babelfont[${ babelfonts.key }]{rm}{${ babelfonts.value }}
+$endfor$
+% get rid of language-specific shorthands (see #6817):
+\let\LanguageShortHands\languageshorthands
+\def\languageshorthands#1{}
+${ if(selnolig-langs) }
+\ifLuaTeX
+  \usepackage[${ for(selnolig-langs) }${ it }${ sep },${ endfor }]{selnolig} % disable illegal ligatures
+\fi
+${ endif }
+${ endif }
+
+%% prevent overfull lines
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+
+%% tight lists
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+
+% Preamble:
+${ for(header-includes) }
+${ header-includes }
+${ endfor }
+
+% Copyright.
+${ if(copyright) }
+\Copyright{${ copyright }}
+${ else }
+\Copyright{\textcolor{red}{TODO: Set copyright.}}
+${ endif }
+
+% ACM 2012 classification.
+${ if(ccsdesc) }
+\ccsdesc[100]{${ ccsdesc }}
+${ else }
+\ccsdesc[100]{\textcolor{red}{TODO: Set ccsdesc.}}
+${ endif }
+
+% Ensure pdflatex processing
+${ if(pdfoutput) }
+\pdfoutput=1
+${ endif }
+
+% Remove references to LIPIcs series (logo, DOI, ...), e.g. when preparing a pre-final version to be uploaded to arXiv or another public repository.
+${ if(hide-lipics) }
+\hideLIPIcs
+${ endif }
+
+% Helpful if graphics are in another directory.
+${ if(graphicspath) }
+\graphicspath{${ graphicspath }}
+${ endif }
+
+% The mandatory bibstyle
+\bibliographystyle{plainurl}
+
+% Document title
+${ if(title) }
+\title{${ title }}
+${ else }
+\title{\textcolor{red}{TODO: Set title.}}
+${ endif }
+
+% Optional. Use if title is longer than one line.
+${ if(titlerunning) }
+\titlerunning{${ titlerunning }}
+${ endif }
+
+% Mandatory. Authors.
+${ for(author) }
+\author{%
+  ${ it.name }%
+}{%
+  ${ it.affiliation }%
+}{%
+  ${ if(it.email) }
+  ${ it.email }%
+  ${ endif }
+}{%
+  ${ if(it.orcid) }
+  ${ it.orcid }%
+  ${ endif }
+}{%
+  ${ if(it.funding) }
+  ${ it.funding }%
+  ${ endif }
+}%
+${ endfor }
+
+% Mandatory.
+% First: Use abbreviated first/middle names.
+% Second (only in severe cases): Use first author plus 'et al.'
+${ if(authorrunning) }
+\authorrunning{${ authorrunning}}
+${ endif }
+
+% Mandatory.
+${ if(keywords) }
+\keywords{${ keywords }}
+${ else }
+\keywords{\textcolor{red}{TODO: Set keywords}}
+${ endif }
+
+% Optional.
+${ if(category) }
+\category{${ category }}
+${ endif }
+
+% Optional. Related version.
+${ if(relatedversion) }
+\relatedversion{${ relatedversion }}
+${ if(relatedversiondetails) }
+\relatedversiondetails[%
+  ${ if(relatedversiondetails.linktext) }
+  linktext=${ relatedversiondetails.linktext },
+  ${ endif }
+  ${ if(relatedversiondetails.cite) }
+  cite=${ relatedversiondetails.cite },
+  ${ endif }
+  ]{%
+  ${ if(relatedversiondetails.classification) }
+  ${ relatedversiondetails.classification }
+  ${ endif }
+  }{%
+  ${ if(relatedversiondetails.url) }
+  ${ relatedversiondetails.url }
+  ${ endif }
+  }
+${ endif }
+${ endif }
+
+% Optional. Supplement.
+${ if(supplement) }
+\supplement{${ supplement }}
+${ if(supplementdetails) }
+\supplementdetails[%
+  ${ if(supplementdetails.linktext) }
+  linktext=${ supplementdetails.linktext },
+  ${ endif }
+  ${ if(supplementdetails.cite) }
+  cite=${ supplementdetails.cite },
+  ${ endif }
+  ${ if(supplementdetails.subcategory) }
+  subcategory=${ supplementdetails.subcategory },
+  ${ endif }
+  ${ if(supplementdetails.swhid) }
+  swhid=${ supplementdetails.swhid },
+  ${ endif }
+  ]{%
+  ${ if(supplementdetails.classification) }
+  ${ supplementdetails.classification }
+  ${ endif }
+  }{%
+  ${ if(supplementdetails.url) }
+  ${ supplementdetails.url }
+  ${ endif }
+  }
+${ endif }
+${ endif }
+
+% Optional. Funding.
+${ if(funding) }
+\funding{${ funding }}
+${ endif }
+
+% Optional. Acknowledgements.
+${ if(acknowledgements) }
+\acknowledgements{${ acknowledgements }}
+${ endif }
+
+% Line numbers.
+${ if(linenumbers) }
+${ else }
+\nolinenumbers
+${ endif }
+
+%Editor-only macros:: begin (do not touch as author)%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\EventEditors{John Q. Open and Joan R. Access}
+\EventNoEds{2}
+\EventLongTitle{42nd Conference on Very Important Topics (CVIT 2016)}
+\EventShortTitle{CVIT 2016}
+\EventAcronym{CVIT}
+\EventYear{2016}
+\EventDate{December 24--27, 2016}
+\EventLocation{Little Whinging, United Kingdom}
+\EventLogo{}
+\SeriesVolume{42}
+\ArticleNo{23}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{document}
+
+\maketitle
+
+% Mandatory. Abstract.
+${ if(abstract) }
+\begin{abstract}
+  ${ abstract }
+\end{abstract}
+${ endif }
+
+${ body }
+
+%% Bibliography.
+${ if(bibliography) }
+\bibliography{${ bibliography }}
+${ endif }
+
+\end{document}
