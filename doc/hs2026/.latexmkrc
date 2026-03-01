@@ -63,7 +63,7 @@ sub run_pandoc_and_lhs2TeX {
     ## Assets
     push @sources, './assets/preamble.fmt';
     push @sources, './assets/preamble.tex';
-    push @sources, './assets/templates/lipics.tex';
+    push @sources, './assets/templates/acmart.tex';
     ## Scripts
     find(sub {
         return unless -f;

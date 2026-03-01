@@ -1,0 +1,120 @@
+@inproceedings{Allais2023,
+  author    = {Allais, Guillaume},
+  editor    = {Wies, Thomas},
+  title     = {Builtin Types Viewed as Safe Families},
+  booktitle = {Programming Languages and Systems},
+  year      = {2023},
+  publisher = {Springer Nature Switzerland},
+  address   = {Cham},
+  pages     = {113--139},
+  abstract  = {State of the art optimisation passes for dependently typed languages can help erase the redundant information typical of invariant-rich data structures and programs. These automated processes do not dramatically change the structure of the data, even though more efficient representations could be available.},
+  isbn      = {978-3-031-30044-8}
+}
+
+@incollection{Barendregt1984,
+  title     = {Chapter 6 - {{Classical Lambda Calculus}}},
+  booktitle = {Studies in {{Logic}} and the {{Foundations}} of {{Mathematics}}},
+  author    = {Henk P. Barendregt},
+  year      = {1984},
+  month     = jan,
+  series    = {The {{Lambda Calculus}}},
+  volume    = {103},
+  pages     = {131--150},
+  publisher = {Elsevier},
+  doi       = {10.1016/B978-0-444-87508-2.50014-9},
+  urldate   = {2025-03-03},
+  abstract  = {This chapter discusses the classical lambda calculus. The fixed point theorem is one of the basic results in the {$\lambda$}-calculus. As is the case in arithmetic or set theory, ordered pairs can be defined in the {$\lambda$}-calculus. In the {$\lambda$}-calculus, various systems of numerals can be defined. The {$\lambda$}-calculus represents a certain class of functions on the integers. By a classical result of Kleene, this is exactly the class of recursive functions. The class of recursive functions is the least class of numeric functions that contains all initial functions and is closed under composition, primitive recursion, and minimalization. The notion of {$\lambda$}-definability is extended to partial numeric functions. One can prove that for a partial numeric function. The chapter discusses how the constructions of G{\"o}dels self-referential sentence and the recursion theorem can be interpreted as the applications of the fixed point combinator.}
+}
+
+@article{deBruijn1972,
+  title    = {Lambda Calculus Notation with Nameless Dummies, a Tool for Automatic Formula Manipulation, with Application to the {{Church-Rosser}} Theorem},
+  author   = {{de Bruijn}, N. G},
+  year     = {1972},
+  month    = jan,
+  journal  = {Indagationes Mathematicae (Proceedings)},
+  volume   = {75},
+  number   = {5},
+  pages    = {381--392},
+  issn     = {1385-7258},
+  doi      = {10.1016/1385-7258(72)90034-0},
+  urldate  = {2025-03-03},
+  abstract = {In ordinary lambda calculus the occurrences of a bound variable are made recognizable by the use of one and the same (otherwise irrelevant) name at all occurrences. This convention is known to cause considerable trouble in cases of substitution. In the present paper a different notational system is developed, where occurrences of variables are indicated by integers giving the ``distance'' to the binding {$\lambda$} instead of a name attached to that {$\lambda$}. The system is claimed to be efficient for automatic formula manipulation as well as for metalingual discussion. As an example the most essential part of a proof of the Church-Rosser theorem is presented in this namefree calculus.}
+}
+
+@article{Frege1892,
+  author    = {Gottlob Frege},
+  journal   = {Zeitschrift f\"{u}r Philosophie Und Philosophische Kritik},
+  number    = {1},
+  pages     = {25--50},
+  publisher = {Duke University Press},
+  title     = {Uber Sinn Und Bedeutung},
+  volume    = {100},
+  year      = {1892}
+}
+
+@misc{Genrus2022,
+  title        = {Three Different Thinnings},
+  author       = {Oleg Genrus},
+  year         = {2022},
+  month        = sep,
+  howpublished = {https://oleg.fi/gists/posts/2022-09-30-thinnings.lagda.html}
+}
+
+@misc{Kovacs2023,
+  title        = {smalltt},
+  author       = {Andr\'{a}s Kov\'{a}cs},
+  year         = {2023},
+  howpublished = {\url{https://github.com/AndrasKovacs/smalltt}},
+  commit       = {b5fc9b3}
+}
+
+@article{McBride2018,
+  title         = {Everybody's {{Got To Be Somewhere}}},
+  author        = {McBride, Conor},
+  year          = {2018},
+  month         = jul,
+  journal       = {Electronic Proceedings in Theoretical Computer Science},
+  volume        = {275},
+  eprint        = {1807.04085},
+  primaryclass  = {cs},
+  pages         = {53--69},
+  issn          = {2075-2180},
+  doi           = {10.4204/EPTCS.275.6},
+  urldate       = {2025-03-03},
+  abstract      = {The key to any nameless representation of syntax is how it indicates the variables we choose to use and thus, implicitly, those we discard. Standard de Bruijn representations delay discarding maximally till the leaves of terms where one is chosen from the variables in scope at the expense of the rest. Consequently, introducing new but unused variables requires term traversal. This paper introduces a nameless 'co-de-Bruijn' representation which makes the opposite canonical choice, delaying discarding minimally, as near as possible to the root. It is literate Agda: dependent types make it a practical joy to express and be driven by strong intrinsic invariants which ensure that scope is aggressively whittled down to just the support of each subterm, in which every remaining variable occurs somewhere. The construction is generic, delivering a universe of syntaxes with higher-order metavariables, for which the appropriate notion of substitution is hereditary. The implementation of simultaneous substitution exploits tight scope control to avoid busywork and shift terms without traversal. Surprisingly, it is also intrinsically terminating, by structural recursion alone.},
+  archiveprefix = {arXiv},
+  keywords      = {Computer Science - Logic in Computer Science,Computer Science - Programming Languages}
+}
+
+@misc{McBride2025,
+  title        = {ask},
+  author       = {Conor McBride and Guillaume Allais and Fredrik Nordvall Forsberg and Jules Hedges},
+  year         = {2025},
+  howpublished = {\url{https://github.com/msp-strath/ask}},
+  commit       = {51ee4b6}
+}
+
+@article{Pitts2003,
+  title    = {Nominal Logic, a First Order Theory of Names and Binding},
+  author   = {Pitts, Andrew M.},
+  year     = {2003},
+  month    = nov,
+  journal  = {Information and Computation},
+  series   = {Theoretical {{Aspects}} of {{Computer Software}} ({{TACS}} 2001)},
+  volume   = {186},
+  number   = {2},
+  pages    = {165--193},
+  issn     = {0890-5401},
+  doi      = {10.1016/S0890-5401(03)00138-X},
+  urldate  = {2025-03-03},
+  abstract = {This paper formalises within first-order logic some common practices in computer science to do with representing and reasoning about syntactical structures involving lexically scoped binding constructs. It introduces Nominal Logic, a version of first-order many-sorted logic with equality containing primitives for renaming via name-swapping, for freshness of names, and for name-binding. Its axioms express properties of these constructs satisfied by the FM-sets model of syntax involving binding, which was recently introduced by the author and M.J. Gabbay and makes use of the Fraenkel--Mostowski permutation model of set theory. Nominal Logic serves as a vehicle for making two general points. First, name-swapping has much nicer logical properties than more general, non-bijective forms of renaming while at the same time providing a sufficient foundation for a theory of structural induction/recursion for syntax modulo {$\alpha$}-equivalence. Secondly, it is useful for the practice of operational semantics to make explicit the equivariance property of assertions about syntax -- namely that their validity is invariant under name-swapping.},
+  keywords = {Abstract syntax,Fresh names,Permutation,Variable binding}
+}
+
+@misc{Idris1,
+  title = {Idris 1},
+  author = {The Idris Developers},
+  year = {2025},
+  howpublished = {\url{https://github.com/idris-lang/Idris-dev}},
+  commit = {fc50b6f}
+}

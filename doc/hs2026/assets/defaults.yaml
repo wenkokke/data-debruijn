@@ -1,0 +1,43 @@
+# Standard settings
+verbosity: "ERROR"
+strip-comments: true
+standalone: true
+
+# Pandoc filters
+filters:
+  - "filters/abstract-section/abstract-section.lua"
+  - "filters/keep-haskell-code-blocks/keep-haskell-code-blocks.lua"
+  - "filters/use-bibtex/use-bibtex.lua"
+
+# Reader and writer
+reader: "markdown"
+writer: "latex"
+
+# Header includes:
+include-in-header:
+  - "preamble.fmt"
+  - "preamble.tex"
+
+# Template and data directory
+data-dir: "assets"
+resource-path: [".", "assets"]
+template: "templates/acmart.tex"
+
+# Metadata
+metadata:
+  title: "Thinning Thinnings: Safe and Efficient Binders"
+  author:
+    - name: April Gonçalves
+      institute: University of Strathclyde
+      city: Glasgow
+      country: UK
+      # NOTE: use @@ instead of @ for lhs2TeX
+      email: april@@cyberglot.me
+    - name: Wen Kokke
+      institute: Well-Typed
+      city: Glasgow
+      country: UK
+      email: me@@wen.works
+  titlerunning: "Thinning Thinnings"
+  authorrunning: "A. Gonçalves and W. Kokke"
+  bibliography: "bibliography.bib"
