@@ -1,0 +1,4 @@
+packages: .
+
+-- Enable tests
+tests: true

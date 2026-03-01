@@ -1,14 +1,21 @@
+<!-- Regular paper: 12 pages -->
+
 # Abstract
 
 To be written last...
 
-# Paper
+# Introduction
 
-This is the paper.
+# Experimental Evaluation
 
-Here's some Haskell.
+
+<!------------------------------------------------------------------------------
+
+This is the main function for the test suite defined in `index.cabal`.
 
 ```haskell
-greet :: IO ()
-greet = putStrLn "Hello, world!"
+main :: IO ()
+main = putStrLn "Hello, Haskell Symposium 2026!"
 ```
+
+------------------------------------------------------------------------------->

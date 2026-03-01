@@ -1,4 +1,5 @@
 /build/
+/dist-newstyle/
 /index.pdf
 /index.tex
 /index.tex.lhs
