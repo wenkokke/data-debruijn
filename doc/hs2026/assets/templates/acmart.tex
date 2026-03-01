@@ -4,6 +4,10 @@
 \let\oldBbbk\Bbbk%
 \let\Bbbk\undefined%
 
+% tight lists:
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+
 % lhs2TeX:
 %include polycode.fmt
 %format aaa
@@ -63,6 +67,11 @@
 %% Uncommenting
 %% the next command will enable that style.
 \citestyle{acmauthoryear}
+
+% Preamble:
+${ for(header-includes) }
+${ header-includes }
+${ endfor }
 
 %%
 %% end of the preamble, start of the body of the document source.

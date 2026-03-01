@@ -1,0 +1,10 @@
+% Support Unicode characters.
+%% \usepackage[T1]{fontenc} %% for diacritics: the default is 'OT1'
+\usepackage[utf8]{inputenc} %% pdflatex: For UTF-8 input support.
+\usepackage{newunicodechar} %% Map Unicode characters to LaTeX commands.
+
+% Packages with various characters.
+\usepackage{textgreek}
+
+% Unicode character mapping.
+\newunicodechar{λ}{{\textlambda}}
