@@ -5,7 +5,7 @@ use File::Spec;
 my $username = $ENV{LOGNAME} || $ENV{USER} || getpwuid($<);
 
 # Set the main file
-@default_files = ('index.tex');
+@default_files = ('thin-thin.tex');
 
 if ($username eq "keri") {
     # Set Skim as the default PDF previewer
@@ -57,13 +57,19 @@ unless (defined $ENV{SKIP_CUS_DEP}) {
 sub run_pandoc_and_lhs2TeX {
   my $base = shift @_;
 
-  if ($base eq 'index') {
+  if ($base eq 'thin-thin') {
     # Get sources for custom dependency
     my @sources;
     ## Assets
     push @sources, './assets/preamble.fmt';
     push @sources, './assets/preamble.tex';
     push @sources, './assets/templates/acmart.tex';
+    ## Sections
+    find(sub {
+        return unless -f;
+        return unless /\.md$/;
+        push @sources, $File::Find::name;
+    }, "./sections");
     ## Scripts
     find(sub {
         return unless -f;

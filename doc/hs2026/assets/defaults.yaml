@@ -6,6 +6,7 @@ standalone: true
 # Pandoc filters
 filters:
   - "filters/abstract-section/abstract-section.lua"
+  - "filters/include-files/include-files.lua"
   - "filters/keep-haskell-code-blocks/keep-haskell-code-blocks.lua"
   - "filters/use-bibtex/use-bibtex.lua"
 

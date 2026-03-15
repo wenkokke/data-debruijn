@@ -1,11 +1,13 @@
-name:             index
+name:             thin-thin
 version:          0.0.0
 build-type:       Simple
 cabal-version:    >= 1.8
 
-test-suite index
+test-suite thin-thin
+  hs-source-dirs:     sections .
   type:               exitcode-stdio-1.0
-  main-is:            index.lhs
+  main-is:            thin-thin.lhs
+  other-modules:      Section1 Section2
   build-depends:      base, markdown-unlit
   ghc-options:        -pgmL markdown-unlit
   build-tool-depends: markdown-unlit:markdown-unlit

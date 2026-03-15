@@ -9,6 +9,10 @@ To be written last...
 - [ ] Define the STλC using *safe* combinators.
 - [ ] Explain the efficient issues with safe combinators.
 
+```include
+sections/Section1.md
+```
+
 # The Fast And The Faithful
 
 - [ ] Explain the technique to control the type representation through lies.
@@ -16,6 +20,10 @@ To be written last...
 - [ ] Give special attention to thinning composition using `PDEP`.
 - [ ] Explain the QuickCheck test suite.
 - [ ] Explain why we're not proving equivalence.
+
+```include
+sections/Section2.md
+```
 
 # Experimental Evaluation
 
